@@ -53,7 +53,7 @@ R"(Given a mesh, compute sharp edges.
 @param[in] V  #V by 3 list of vertex positions
 @param[in] F  #F by 3 list of triangle mesh indices into V
 @param[in] angle  dihedral angle considered sharp (e.g., igl.PI * 0.11)
-@param[out] SE  #SE by 2 list of sharp edge indices into V)");
+@return SE  #SE by 2 list of sharp edge indices into V)");
   m.def(
     "sharp_edges_full",
     &pyigl::sharp_edges_full,
@@ -65,10 +65,11 @@ R"(Given a mesh, compute sharp edges with full edge-map output.
 @param[in] V  #V by 3 list of vertex positions
 @param[in] F  #F by 3 list of triangle mesh indices into V
 @param[in] angle  dihedral angle considered sharp (e.g., igl.PI * 0.11)
-@param[out] SE  #SE by 2 list of sharp edge indices into V
-@param[out] E  #F*3 by 2 list of all directed edges
-@param[out] uE  #uE by 2 list of unique undirected edges
-@param[out] EMAP  #F*3 list of indices into uE
-@param[out] uE2E  #uE list of lists of indices into E of coexisting edges
-@param[out] sharp  #SE list of indices into uE of sharp edges)");
+@return Tuple containing:
+  - SE: #SE by 2 list of sharp edge indices into V
+  - E: #F*3 by 2 list of all directed edges
+  - uE: #uE by 2 list of unique undirected edges
+  - EMAP: #F*3 list of indices into uE
+  - uE2E: #uE list of lists of indices into E of coexisting edges
+  - sharp: #SE list of indices into uE of sharp edges)");
 }
