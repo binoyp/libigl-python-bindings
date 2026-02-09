@@ -1,0 +1,29 @@
+# Version Control
+.git
+.github
+
+# Environment and IDE
+.venv
+.idea
+.vscode
+.python-version
+
+# Build and Output
+build/
+cmake-build-debug/
+dist/
+wheelhouse/
+*.whl
+
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+
+# Temporary and Miscellaneous
+*.swp
+*.swo
+*~
+.DS_Store
